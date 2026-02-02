@@ -1,11 +1,13 @@
+import Link from 'next/link';
 interface MenuButtonProps {
     titulo: string;
     imagem: string;
+    destino: string;
 }
 
-export default function MenuButton({ titulo, imagem }: MenuButtonProps) {
+export default function MenuButton({ titulo, imagem, destino}: MenuButtonProps) {
     return (
-        <button className="relative w-[70%] h-[15%] overflow-hidden rounded-lg group">
+        <Link href={destino} className="relative w-[70%] h-[25%] overflow-hidden rounded-lg group">
             <img 
                 src={imagem} 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
@@ -18,6 +20,6 @@ export default function MenuButton({ titulo, imagem }: MenuButtonProps) {
                     {titulo}
                 </span>
             </div>
-        </button>
+        </Link>
     );
 }

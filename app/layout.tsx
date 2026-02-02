@@ -1,4 +1,5 @@
 import './globals.css'
+import SidebarButton from '../components/SidebarButton'
 
 export const metadata = {
   title: 'Meu Site',
@@ -15,9 +16,10 @@ export default function RootLayout({
       <body className="flex min-h-screen">
         
         {/* LADO 1: A SIDEBAR (Largura fixa) */}
-        <aside className="w-[15vw] border-r border-gray-200">
-          {/* Aqui vai entrar o seu Menu depois */}
-          <p className="p-4 text-gray-400">placeholder</p>
+        <aside className="w-[15vw] border-r border-gray-200 flex-col p-10">
+          <SidebarButton titulo="home" icone="/homeicon.png" destino="/"/>
+          <SidebarButton titulo="comidas" icone="/comidasicon.png" destino="/cardapio/comidas"/>
+          <SidebarButton titulo="bebidas" icone="/bebidasicon.png" destino="/cardapio/bebidas"/>
         </aside>
 
         {/* LADO 2: O CONTEÚDO (Ocupa o resto da tela) */}
